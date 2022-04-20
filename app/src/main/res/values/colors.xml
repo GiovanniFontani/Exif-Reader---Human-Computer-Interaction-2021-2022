@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#333333</color>
+    <color name="primary">#1F54DB</color>
+    <color name="deactivate_button">#441C54BD</color>
+    <color name="secondary">#A32424</color>
+    <color name="selected_image">#FF0000</color>
+    <color name="overlayed_view">#CC7895AB</color>
+    <color name="exif_data_item">#566B7A</color>
+    <color name="selected_exif_data_item">#354049</color>
+    <color name="blue">#1F54DB</color>
+</resources>

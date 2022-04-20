@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".ExifActivity">
+
+    <ImageButton
+        android:id="@+id/exif_close_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_button"
+        android:contentDescription="@string/image_90_left_ruotate_button"
+        android:elevation="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_icons8_close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:tint="@color/white"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/image_exif_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/exif_data_background_box"
+        app:layout_constraintBottom_toTopOf="@id/google_map_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_exif_name_textview">
+
+
+        <TextView
+            android:id="@+id/exif_data_counter_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exif_data"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exif_data_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:paddingStart="5dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="3dp"
+            android:paddingBottom="3dp"
+            android:scrollbarSize="10dp"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbarThumbVertical="@color/primary"
+            android:scrollbars="horizontal|vertical"
+            tools:context=".bookmarking.BookmarkFragment"
+            tools:listitem="@layout/exif_data_item" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/MaterialButtonStyle"
+        android:id="@+id/google_map_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/on_map_location"
+        android:enabled="false"
+        app:layout_constraintVertical_bias="0.99"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

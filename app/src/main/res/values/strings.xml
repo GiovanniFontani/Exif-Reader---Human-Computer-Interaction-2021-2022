@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ExifReader</string>
+    <string name="ruotate90leftbutton" />
+    <string name="exifDataButton">Exif Data</string>
+    <string name="ruotate90rightbutton" />
+    <string name="image_90_left_ruotate_button" />
+    <string name="image_90_right_ruotate_button" />
+    <string name="image_name">ImageName</string>
+    <string name="on_map_location">On Map Location</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="open_selected_images_gallery">Open Selected Images Gallery</string>
+    <string name="exif_data">Exif Data:</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="info_text"> There are two ways of inspecting images </string>
+    <string name="simple_task_text"> 1) Simple task: Long press of a gallery image brings to inspect the single image.</string>
+    <string name="extra_task_text">2) Extra Task: Simple press of a gallery image selects this image that will become highlighted.
+        You can select how many images you want and then inspect all the images of this
+        selection by clicking on Open Selected Image Gallery."</string>
+</resources>

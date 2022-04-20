@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/exif_data_background_box.xml" value="0.168" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/ic_left_arrow.xml" value="0.2085" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/ic_right_arrow.xml" value="0.2085" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/image_show_background_box.xml" value="0.176" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/rounded_button.xml" value="0.2445" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable-v24/selected_exif_data_background_box.xml" value="0.1" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_exif_reader.xml" value="0.1" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_icon_rotate_left_90.xml" value="0.1295" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_icon_rotate_right_90.xml" value="0.1225" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_icons8_close.xml" value="0.1295" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/ic_question_mark.xml" value="0.1505" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/image_gallery_selected.xml" value="0.1885" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/drawable/vertical_placeholder.xml" value="0.1125" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/activity_exif.xml" value="0.264" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/activity_image_show.xml" value="0.176" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/activity_maps.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/exif_data_item.xml" value="0.264" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/layout/gallery_image_item.xml" value="0.152" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
+        <entry key="..\:/Users/Giovanni/AndroidStudioProjects/ExifReader/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.176" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="androidx.annotation.RequiresApi" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

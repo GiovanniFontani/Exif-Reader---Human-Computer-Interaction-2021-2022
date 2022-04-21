@@ -4,9 +4,7 @@ Images are everywhere. With the proliferation of images and image formats (prima
 
 # Development 
 
-The app project has been developed through Java - Android Studio, with the use of the Glide library 
-to render the images, metadata-extractor library for reading metadata from media files, and play-services-maps library  
-used to manage google maps. App works for Andorid Phones which have an API level &lt;= 29. 
+The app project has been developed through Java - Android Studio, with the use of the Glide library to render the images, metadata-extractor library for reading metadata from media files, and play-services-maps library used to manage google maps. App works for Andorid Phones which have an API level &lt;= 29. 
 
 # Instructions to test
 

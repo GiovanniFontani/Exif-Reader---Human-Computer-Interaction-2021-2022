@@ -17,3 +17,4 @@ To test the application you can use the [Bluestacks5](https://www.bluestacks.com
 * It is possible to inspect a single image with a long touch, or generate a selection of images, selecting them with simple touches, to be displayed all together in a sort of gallery (Extra).<br>
 * Once selected, the images are shown individually.If one size is greater than 512px, the image is scaled using 512px as a limit. It is also possible to rotate the image in 90 'steps to the right or left.<br>
 * For each image you can view all the exif data in a list and if there is GPS data relating to where the photo was taken, you can view the position in a Google Map (Extra).<br>
+* The application can be used both in landscape and portrait mode without loss of functionality.

@@ -156,7 +156,10 @@ public class ImageData extends File {
                     }
                 }
                 if (tag.getTagName().contains("Orientation") || tag.getTagName().contains("orientation")) {
-                    orientation = tag.getDescription().replaceAll("[^0-9]", "");
+                        orientation = tag.getDescription().replaceAll("[^0-9]", "");
+                        if(orientation.equals("")){
+                            orientation="0";
+                        }
                 }
             }
         }

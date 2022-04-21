@@ -13,6 +13,8 @@
     android:paddingBottom="3dp"
     tools:context=".MainActivity">
 
+
+
     <LinearLayout
         android:id="@+id/info_main_activity_layout"
         android:layout_width="match_parent"
@@ -49,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/info_text"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -74,8 +77,9 @@
         android:id="@+id/gallery_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/selected_images_gallery_button"
+        app:layout_constraintBottom_toTopOf="@id/selected_images_gallery_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -85,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -95,24 +99,51 @@
             android:id="@+id/recyclerview_gallery_images"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="11"
+            android:layout_weight="10"
+            android:padding="5dp"
+            android:background="@drawable/image_recyclerview_background_box"
             android:foregroundGravity="center"
             android:scrollbarSize="10dp"
             android:scrollbarStyle="outsideInset"
-            android:scrollbarThumbVertical="@color/primary"
             android:scrollbars="horizontal|vertical" />
 
+        <TextView
+            android:id="@+id/selected_image_textview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/selected_images"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_selected_images"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:padding="5dp"
+            android:background="@drawable/image_recyclerview_background_box"
+            android:foregroundGravity="center"
+            android:scrollbarSize="10dp"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="horizontal|vertical"
+             />
     </LinearLayout>
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/selected_images_gallery_button"
         style="@style/MaterialButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:background="@drawable/rounded_button"
         android:enabled="false"
+
         android:text="@string/open_selected_images_gallery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,6 +152,7 @@
         app:layout_constraintVertical_bias="0.98" />
 
     <ImageButton
+        android:contentDescription="@string/info_window_opener"
         android:id="@+id/info_button"
         android:layout_width="40dp"
         android:layout_height="40dp"

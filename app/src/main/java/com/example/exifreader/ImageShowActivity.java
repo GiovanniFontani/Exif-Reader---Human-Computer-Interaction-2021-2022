@@ -43,6 +43,7 @@ public class ImageShowActivity extends AppCompatActivity {
     private MaterialButton previousImageButton;
     private MaterialButton nextImageButton;
     private TextView imageNameTextView;
+    private TextView imageSizeTextView;
     private int currentPosition = 0;
     private ImageData currentImage;
     private ArrayList<String> multiImages;
@@ -57,6 +58,7 @@ public class ImageShowActivity extends AppCompatActivity {
         imageShowCloseButton = findViewById(R.id.image_show_close_button);
         exifDataExploreButton = findViewById(R.id.exif_data_button);
         imageNameTextView = findViewById(R.id.image_show_name_textview);
+        imageSizeTextView = findViewById(R.id.image_size_textview);
         imageShowView = findViewById(R.id.image_show_view);
         nextImageButton = findViewById(R.id.next_image_button);
         previousImageButton = findViewById(R.id.previous_image_button);
@@ -138,17 +140,16 @@ public class ImageShowActivity extends AppCompatActivity {
     }
 
     /** Displays the current image by scaling to the limit size.
-     * A Toast message is shown that with the original size and the scaled size. */
+     * Resizing from original to scaled size is also indicated. */
+    @SuppressLint("SetTextI18n")
     private void showImage(){
         imageNameTextView.setText(currentImage.getName());
         imageNameTextView.setSelected(true);
+
         HashMap<String,Integer> scaledDimensions = currentImage.scaleImageMaxSize(512);
-        Toast imgInfo = Toast.makeText(this, "Image W:" + currentImage.getWidth() +
-                " H:" + currentImage.getHeight() +
-                " Rescaled W:" + scaledDimensions.get("scaledWidth") + " " +
-                " H:" + scaledDimensions.get("scaledHeight"),  Toast.LENGTH_SHORT);
-        imgInfo.setGravity(Gravity. TOP|Gravity. CENTER_HORIZONTAL, 0, 200);
-        imgInfo.show();
+        imageSizeTextView.setText("Image Size: " + currentImage.getWidth() +
+                "x" + currentImage.getHeight() +"    Size Shown: " + scaledDimensions.get("scaledWidth")
+                + "x" + scaledDimensions.get("scaledHeight"));
         RequestOptions request = currentImage.scaledDimensionRequest(512);
         Glide.with(this)
                 .load(currentImage.getPathName())

@@ -21,6 +21,7 @@ public class ImageHolder extends RecyclerView.ViewHolder{
     }
 
     public ImageView getImageView(){
-        return imageView;
+        return this.imageView;
     }
+
 }

@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -18,19 +20,18 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.drew.imaging.ImageProcessingException;
+
 import com.example.exifreader.Controller.ImageDataAdapter;
 import com.example.exifreader.Model.Util.ImagesGallery;
 import com.example.exifreader.Controller.PhotoIconListener;
 import com.example.exifreader.View.ImageHolder;
 import com.google.android.material.button.MaterialButton;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /** This activity shows the images in the mobile memory (image extensions defined in the
- * ImageGallery class which provides functions for uploading). Images are shown using a Recyclerview
+ * ImageGallery class which provides functions for uploading). Images are shown using two Recyclerviews
  * managed with ImageDataAdapter and ImageDataHolder. It is possible to inspect a single image with
  * a long click on it, or select multiple images and inspect them in a "gallery" by clicking on
  * the Open Selected Image Gallery button. This activity is linked to the activity_main.xml
@@ -40,10 +41,12 @@ public class MainActivity extends AppCompatActivity implements PhotoIconListener
     private ImageButton infoButton;
     private ImageButton closeButton;
     private MaterialButton selectedImagesGalleryButton;
-    private RecyclerView recyclerView;
+    private RecyclerView galleryRecyclerView;
+    private RecyclerView selectedRecyclerView;
     private TextView galleryNumber;
 
     private ImageDataAdapter imageDataAdapter;
+    private ImageDataAdapter selectedDataAdapter;
     private List<File> images;
     private List<File> multiImages;
     private static final int MY_READ_PERMISSION_CODE = 101;
@@ -59,21 +62,31 @@ public class MainActivity extends AppCompatActivity implements PhotoIconListener
         galleryNumber = findViewById(R.id.gallery_number);
         selectedImagesGalleryButton = findViewById(R.id.selected_images_gallery_button);
         multiImages = new ArrayList<>();
-        recyclerView = findViewById(R.id.recyclerview_gallery_images);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager( this,  3));
+        galleryRecyclerView = findViewById(R.id.recyclerview_gallery_images);
+        galleryRecyclerView.setHasFixedSize(true);
+        selectedRecyclerView = findViewById(R.id.recyclerview_selected_images);
+        selectedRecyclerView.setHasFixedSize(true);
+        if(getResources().getConfiguration().orientation ==  Configuration.ORIENTATION_LANDSCAPE) {
+            galleryRecyclerView.setLayoutManager(new GridLayoutManager(this, 9));
+            selectedRecyclerView.setLayoutManager(new GridLayoutManager(this, 9));
+        }else
+        {
+            galleryRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+            selectedRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+        }
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_READ_PERMISSION_CODE);
         displayGallery();
     }
 
     /* Shows the gallery and sets the listeners */
+    @SuppressLint("DefaultLocale")
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void displayGallery() {
         images = ImagesGallery.listOfImages();
         imageDataAdapter = new ImageDataAdapter(this,images,this);
-        recyclerView.setAdapter(imageDataAdapter);
-        galleryNumber.setText("Exif Reader Gallery: Photos (" + images.size()+")");
+        galleryRecyclerView.setAdapter(imageDataAdapter);
+        galleryNumber.setText(String.format("Exif Reader Gallery: Photos (%d)", images.size()));
 
         /* Button listener that manages the throw of the ImageShowActivity */
         selectedImagesGalleryButton.setOnClickListener(view -> {
@@ -103,14 +116,13 @@ public class MainActivity extends AppCompatActivity implements PhotoIconListener
     }
 
     /** Handles the simple click of an image item which is then selected/deselected and
-     * added/removed. It also manages the list and the button to inspect them.
+     * added/removed. It also manages the list of selections and the button to inspect them.
      * @param holder The item that was touched
      * @param image The image of the model linked to the item
      */
     @Override
     public void onPhotoClick(ImageHolder holder, File image) {
         if (multiImages.contains(image)) {
-            holder.getImageView().setBackgroundResource(R.color.app_background);
             multiImages.remove(image);
             if(multiImages.size() == 0)
                 selectedImagesGalleryButton.setEnabled(false);
@@ -118,8 +130,9 @@ public class MainActivity extends AppCompatActivity implements PhotoIconListener
             if(multiImages.size() == 0)
                 selectedImagesGalleryButton.setEnabled(true);
             multiImages.add(image);
-            holder.getImageView().setBackgroundResource(R.drawable.image_gallery_selected);
         }
+        selectedDataAdapter = new ImageDataAdapter(this,multiImages,this);
+        selectedRecyclerView.setAdapter(selectedDataAdapter);
     }
 
     /** Handles the long click of an image element by immediately launching ImageShowActivity to inspect it.

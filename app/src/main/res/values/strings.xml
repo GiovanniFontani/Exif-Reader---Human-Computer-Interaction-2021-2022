@@ -11,9 +11,13 @@
     <string name="open_selected_images_gallery">Open Selected Images Gallery</string>
     <string name="exif_data">Exif Data:</string>
     <string name="placeholder">Placeholder</string>
-    <string name="info_text"> There are two ways of inspecting images </string>
-    <string name="simple_task_text"> 1) Simple task: Long press of a gallery image brings to inspect the single image.</string>
-    <string name="extra_task_text">2) Extra Task: Simple press of a gallery image selects this image that will become highlighted.
+    <string name="info_text"> There are two ways of inspecting images: </string>
+    <string name="simple_task_text"> 1)Long press of an image brings to inspect the single image. (Simple assignment task)</string>
+    <string name="extra_task_text">2)Simple press of an image put this image into "Selected Images". If a selected image is pressed
+        in one of the two lists, it is removed from the list of selected images.
         You can select how many images you want and then inspect all the images of this
-        selection by clicking on Open Selected Image Gallery."</string>
+        selection by clicking on Open Selected Image Gallery. (Extra assignment task)</string>
+    <string name="show_image">Show Image</string>
+    <string name="selected_images">Selected Images:</string>
+    <string name="info_window_opener">info window opener</string>
 </resources>

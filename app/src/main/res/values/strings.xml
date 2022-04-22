@@ -8,7 +8,7 @@
     <string name="image_name">ImageName</string>
     <string name="on_map_location">On Map Location</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="open_selected_images_gallery">Open Selected Images Gallery</string>
+    <string name="open_selected_images_gallery">Open Selected Images</string>
     <string name="exif_data">Exif Data:</string>
     <string name="placeholder">Placeholder</string>
     <string name="info_text"> There are two ways of inspecting images: </string>

@@ -8,7 +8,7 @@ The app project has been developed through Java - Android Studio, with the use o
 
 # Instructions to test
 
-To test the application you can use the [Bluestacks5](https://www.bluestacks.com/it/bluestacks-5.html?utm_source=Google&utm_medium=CPC&utm_campaign=aw-ded-it-bluestacks5-brand&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukv6lIO4Esdp5ZpGA3nBb2DJ2SCUnL7L5R9tGbmQgvDjeF3x3Fuma88aAuO9EALw_wcB) android emulator. Once the emulator is installed and started, open SystemApp-MediaManager and add test images by dragging images to the right pane. Test images are provided in the example_photos folder from the root. Now using Bluestack5 start ExifReader.apk file in the Runnable folder from the root. The application will be installed and it will be possible to start it. It usually runs in landscape mode but with the side controls it is also possible to switch to portrait mode.
+To test the application you can use the [Bluestacks5](https://www.bluestacks.com/it/bluestacks-5.html?utm_source=Google&utm_medium=CPC&utm_campaign=aw-ded-it-bluestacks5-brand&gclid=Cj0KCQjwgYSTBhDKARIsAB8Kukv6lIO4Esdp5ZpGA3nBb2DJ2SCUnL7L5R9tGbmQgvDjeF3x3Fuma88aAuO9EALw_wcB) android emulator. Once the emulator is installed and started, open SystemApp-MediaManager and add test images by dragging images to the right pane. Test images are provided in the example_photos folder from the root. Now using Bluestack5 start ExifReader.apk file in the Runnable folder from the root. The application will be installed and it will be possible to start it. It usually runs in landscape mode but with the side controls it is also possible to switch to portrait mode.<br>
 Alternatively you can try to install the .apk file by downloading it on an andorid smartphone with Lvl Api <= 29 (Andorid 10)
 
 # How to use 
